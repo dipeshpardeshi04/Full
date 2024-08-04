@@ -1,4 +1,5 @@
 const express = require("express");
+const serverless = require('serverless-http');
 const app = express();
 const path = require("path")
 const mongoose = require("mongoose")
@@ -107,3 +108,4 @@ app.use(session({
     resave: false,
     saveUninitialized: true
   }))
+  module.exports.handler = serverless(app);
